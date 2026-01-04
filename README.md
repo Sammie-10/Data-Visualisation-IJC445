@@ -1,2 +1,2 @@
-Understanding the air quality is an essential step to improve public health. The IJC437 repository investigates the affect rain has on PM2.5 and this research develops this to discover if PM2.5 concentration has changed from 2022 and 2024. 
+Understanding the air quality is an essential step to improve public health. The IJC437 repository investigates analytical techniques for PM2.5 while this repository aims to discover the best visualisation techniques to display data. Each graph has been carefully chosen based on elements such as accessibility and ethicality. This reposity explores the difference between PM2.5 air quality in 2022 and 2024. 
 KEY FINDINGS !!!!!!!!!
