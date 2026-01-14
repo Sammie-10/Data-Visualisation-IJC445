@@ -1,5 +1,5 @@
 ################
-##IMPORT THE DATA/PACKAGES##
+##IMPORT THE DATA##
 ################
 
 df_count <- read.csv("Sheff_Count.csv") 
