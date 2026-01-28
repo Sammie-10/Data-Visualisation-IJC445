@@ -19,8 +19,9 @@ ggplot(df_count, aes(x = "", y = n, fill = pm25_level)) +
   theme_void() + # simpler theme 
   theme(legend.position = "bottom",
         plot.title = element_text(hjust = 0.1, size = 17), # change the title size and adjust it to the right slightly
-        legend.title = element_text(face = "bold", size = 15), # change the legend size and make it bold
-        strip.text = element_text(size = 15), # adjust the title
+        legend.title = element_text(size = 15), # change the legend size and make it bold
+        legend.text =  element_text(size = 13), 
+        strip.text = element_text(size = 15), # text for years sizes 
         strip.text.x = element_text(margin = margin(t = 10)), # adjust the title
         legend.margin = margin(t = -10)) + # adjust the legend
   labs(title = "Fine Particle Air Pollution Danger Levels Have Decreased From 2022 and 2024", # title
@@ -39,12 +40,13 @@ ggplot(season_avg22_24, aes(x = season, y = pm25_avg, group = factor(year), colo
   scale_fill_manual(values = c("2022" = "blue", "2024" = "orange")) + # change the colour of standard dev. shading
   scale_y_continuous(limits = c(0, 20)) + # change the y-axis range 
   scale_x_discrete(limits = c("Spring", "Summer", "Autumn", "Winter")) + # change the order of the x-axis
+  theme_bw(base_size = 14) + # change the theme and size of text 
   labs(title = expression(PM[2.5] * "Trend per Season in 2022 and 2024"), # title
        x = "Season", 
        y = expression("Average " * PM[2.5] * " (" * mu * "g/m"^3 * ")"),
        colour = "Year", 
-       fill = "Year") + # legend 
-  theme_bw(base_size = 14) # change the theme and size of text 
+       fill = "Year") # legend 
+  
 
 ################
 ##BOX PLOT##
@@ -53,7 +55,9 @@ ggplot(season_avg22_24, aes(x = season, y = pm25_avg, group = factor(year), colo
 ggplot(sheff_all, aes(factor(year), pm25_day, fill=factor(year))) +
   geom_boxplot(alpha = 0.7, outlier.colour = "red", notch = TRUE, notchwidth = 0.9) + # create the boxplot with outliers
   scale_fill_manual(values = c("blue", "orange")) + # change the colour of the boxes
-  theme_bw() + # change the theme 
+  theme_bw() + # change the theme  
+  theme(legend.title = element_text(size = 14), # change the legend title size
+        legend.text = element_text(size = 12)) + # change the legend text size
   scale_y_continuous(breaks = seq(0, 45, by = 5)) + # change the scale of the y-axis
   stat_boxplot(geom = "errorbar", width = 0.1) + # edit the error bar to be thicker 
   labs(title = expression("The Average Total " * PM[2.5] * " Readings in 2022 and 2024"), # title
