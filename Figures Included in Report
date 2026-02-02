@@ -69,7 +69,7 @@ ggplot(sheff_all, aes(factor(year), pm25_day, fill=factor(year))) +
 ##FACET BAR CHART##
 ################
 
-# change the date coloumn to be readable by R 
+# change the date column to be readable by R 
 facet_avg$date <- as.Date(facet_avg$date, format = "%d/%m/%Y") 
 facet_avg$date <- factor(format(facet_avg$date, "%b"), levels = month.abb)
 
