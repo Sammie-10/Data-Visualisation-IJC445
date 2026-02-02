@@ -2,6 +2,8 @@
 ##IMPORT THE DATA/PACKAGES##
 ################
 
+library(ggplot2)
+
 df_count <- read.csv("Sheff_Count.csv") 
 season_avg22_24 <- read.csv("Sheff_Season_Avg22_24.csv") 
 sheff_all <- read.csv("Sheff_Daily22_24.csv") 
@@ -10,7 +12,6 @@ facet_avg <- read.csv("Sheff_Month_Avg22_24.csv")
 ################
 ##PIE CHART##
 ################
-library(ggplot2)
 
 ggplot(df_count, aes(x = "", y = n, fill = pm25_level)) + 
   geom_bar(stat = "identity", width = 0.01, color = "black") +
